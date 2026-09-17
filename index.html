@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ONUK Oto Detailing | Gemlik Bursa</title>
+<meta name="description" content="ONUK Oto Detailing için hazırlanmış premium web sitesi tasarım önizlemesi.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --black:#050505;
+  --dark:#0a0a0b;
+  --panel:#101012;
+  --white:#f4f2ed;
+  --muted:#96969a;
+  --red:#ff2b1c;
+  --line:rgba(255,255,255,.12);
+  --max:1280px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+
+body{
+  background:var(--black);
+  color:var(--white);
+  font-family:Inter,sans-serif;
+  overflow-x:hidden;
+}
+
+a{text-decoration:none;color:inherit}
+img{display:block;width:100%}
+::selection{background:var(--red);color:#fff}
+
+.container{
+  width:min(var(--max),calc(100% - 44px));
+  margin:auto;
+}
+
+/* NAV */
+
+nav{
+  position:fixed;
+  top:0;left:0;right:0;
+  height:76px;
+  z-index:1000;
+  background:rgba(5,5,5,.78);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--line);
+}
+
+.nav-inner{
+  width:min(var(--max),calc(100% - 44px));
+  height:100%;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo{
+  font-family:Oswald,sans-serif;
+  font-size:26px;
+  font-weight:700;
+  letter-spacing:1px;
+}
+
+.logo span{color:var(--red)}
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:28px;
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  font-weight:600;
+}
+
+.nav-links a{opacity:.75;transition:.2s}
+.nav-links a:hover{opacity:1;color:var(--red)}
+
+.nav-cta{
+  border:1px solid var(--red);
+  color:var(--red)!important;
+  padding:12px 18px;
+}
+
+/* HERO */
+
+.hero{
+  min-height:100vh;
+  position:relative;
+  display:flex;
+  align-items:flex-end;
+  overflow:hidden;
+  padding-top:76px;
+}
+
+.hero-bg{
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg,rgba(0,0,0,.95) 0%,rgba(0,0,0,.57) 48%,rgba(0,0,0,.22) 100%),
+    linear-gradient(0deg,#050505 0%,transparent 42%),
+    url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=2000&q=88")
+    center/cover;
+  transform:scale(1.04);
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  left:0;right:0;bottom:0;
+  height:1px;
+  background:var(--line);
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  width:min(var(--max),calc(100% - 44px));
+  margin:auto;
+  padding:100px 0 80px;
+}
+
+.eyebrow{
+  color:var(--red);
+  text-transform:uppercase;
+  letter-spacing:4px;
+  font-size:11px;
+  font-weight:700;
+  margin-bottom:25px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.eyebrow::before{
+  content:"";
+  width:42px;
+  height:2px;
+  background:var(--red);
+}
+
+.hero h1{
+  font-family:Oswald,sans-serif;
+  font-size:clamp(72px,13vw,175px);
+  line-height:.79;
+  letter-spacing:-6px;
+  text-transform:uppercase;
+  max-width:1100px;
+}
+
+.hero h1 span{
+  color:transparent;
+  -webkit-text-stroke:1px rgba(255,255,255,.7);
+}
+
+.hero-bottom{
+  margin-top:50px;
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:40px;
+}
+
+.hero-text{
+  max-width:570px;
+  color:#bbb;
+  line-height:1.8;
+  font-size:15px;
+}
+
+.actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  min-height:54px;
+  padding:0 24px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid var(--line);
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  font-weight:700;
+  transition:.25s;
+}
+
+.btn-red{
+  background:var(--red);
+  border-color:var(--red);
+  color:#fff;
+}
+
+.btn:hover{transform:translateY(-3px)}
+.btn-red:hover{background:#fff;color:#000;border-color:#fff}
+.btn-dark:hover{border-color:var(--red);color:var(--red)}
+
+/* MARQUEE */
+
+.marquee{
+  overflow:hidden;
+  border-bottom:1px solid var(--line);
+  background:#080808;
+}
+
+.marquee-track{
+  width:max-content;
+  display:flex;
+  animation:scroll 26s linear infinite;
+}
+
+.marquee span{
+  white-space:nowrap;
+  padding:19px 32px;
+  color:#777;
+  font-family:Oswald,sans-serif;
+  letter-spacing:2px;
+  font-size:13px;
+}
+
+.marquee b{color:var(--red)}
+
+@keyframes scroll{
+  to{transform:translateX(-50%)}
+}
+
+/* GENERAL */
+
+section{padding:120px 0}
+
+.section-head{
+  display:grid;
+  grid-template-columns:.55fr 1.45fr;
+  gap:70px;
+  margin-bottom:70px;
+}
+
+.index{
+  color:var(--red);
+  font-size:11px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+}
+
+h2{
+  font-family:Oswald,sans-serif;
+  font-size:clamp(48px,7vw,92px);
+  line-height:.9;
+  text-transform:uppercase;
+  letter-spacing:-3px;
+}
+
+.section-copy{
+  color:var(--muted);
+  max-width:620px;
+  line-height:1.8;
+  margin-top:25px;
+}
+
+/* INTRO */
+
+.intro{background:#090909}
+
+.intro-grid{
+  display:grid;
+  grid-template-columns:1.35fr .65fr;
+  gap:12px;
+}
+
+.image-box{
+  min-height:610px;
+  position:relative;
+  overflow:hidden;
+}
+
+.image-box img{
+  height:100%;
+  object-fit:cover;
+  filter:saturate(.8);
+  transition:.7s ease;
+}
+
+.image-box:hover img{transform:scale(1.04)}
+
+.image-label{
+  position:absolute;
+  left:18px;
+  bottom:18px;
+  background:rgba(0,0,0,.78);
+  backdrop-filter:blur(12px);
+  border-left:3px solid var(--red);
+  padding:13px 16px;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  font-size:10px;
+}
+
+/* SERVICES */
+
+.services{
+  background:var(--black);
+}
+
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+}
+
+.service{
+  min-height:350px;
+  border:1px solid var(--line);
+  background:linear-gradient(145deg,#101011,#080808);
+  padding:36px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  position:relative;
+  overflow:hidden;
+  transition:.3s;
+}
+
+.service::after{
+  content:"";
+  position:absolute;
+  bottom:0;left:0;
+  height:3px;
+  width:0;
+  background:var(--red);
+  transition:.4s;
+}
+
+.service:hover{
+  transform:translateY(-4px);
+  border-color:rgba(255,43,28,.5);
+}
+
+.service:hover::after{width:100%}
+
+.service-top{
+  display:flex;
+  justify-content:space-between;
+  color:var(--red);
+  text-transform:uppercase;
+  letter-spacing:2px;
+  font-size:10px;
+}
+
+.service h3{
+  font-family:Oswald,sans-serif;
+  text-transform:uppercase;
+  font-size:38px;
+  line-height:1;
+  margin-bottom:18px;
+}
+
+.service p{
+  color:var(--muted);
+  max-width:500px;
+  line-height:1.7;
+  font-size:14px;
+}
+
+/* CINEMA */
+
+.cinema{
+  min-height:760px;
+  display:flex;
+  align-items:center;
+  background:
+    linear-gradient(90deg,rgba(0,0,0,.96),rgba(0,0,0,.2)),
+    url("https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=2000&q=88")
+    center/cover;
+}
+
+.cinema-content{max-width:790px}
+
+.cinema p{
+  max-width:590px;
+  color:#c2c2c2;
+  line-height:1.8;
+  margin:30px 0;
+}
+
+/* GALLERY */
+
+.gallery{background:#090909}
+
+.gallery-grid{
+  display:grid;
+  grid-template-columns:1.4fr .8fr .8fr;
+  grid-auto-rows:300px;
+  gap:10px;
+}
+
+.gallery-item{
+  overflow:hidden;
+  position:relative;
+}
+
+.gallery-item:first-child{
+  grid-row:span 2;
+}
+
+.gallery-item:nth-child(4){
+  grid-column:span 2;
+}
+
+.gallery-item img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:grayscale(35%);
+  transition:.6s;
+}
+
+.gallery-item:hover img{
+  transform:scale(1.05);
+  filter:grayscale(0);
+}
+
+/* EXPERIENCE */
+
+.experience-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  border:1px solid var(--line);
+}
+
+.exp{
+  min-height:310px;
+  padding:32px 26px;
+  border-right:1px solid var(--line);
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+.exp:last-child{border-right:0}
+
+.exp-number{
+  font-family:Oswald,sans-serif;
+  font-size:48px;
+  color:var(--red);
+}
+
+.exp h3{
+  font-family:Oswald,sans-serif;
+  text-transform:uppercase;
+  font-size:25px;
+  margin-bottom:10px;
+}
+
+.exp p{
+  color:var(--muted);
+  line-height:1.7;
+  font-size:13px;
+}
+
+/* RED CTA */
+
+.red-section{
+  background:var(--red);
+  color:white;
+}
+
+.red-inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:40px;
+}
+
+.red-inner h2{max-width:900px}
+
+.black-btn{
+  border-color:#fff;
+  color:#fff;
+  min-width:200px;
+}
+
+.black-btn:hover{
+  background:#000;
+  border-color:#000;
+}
+
+/* CONTACT */
+
+.contact{background:#070707}
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+}
+
+.contact-text p{
+  color:var(--muted);
+  line-height:1.8;
+  max-width:520px;
+  margin-top:25px;
+}
+
+.contact-cards{
+  display:grid;
+  gap:10px;
+}
+
+.contact-card{
+  border:1px solid var(--line);
+  padding:25px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  transition:.25s;
+}
+
+.contact-card:hover{
+  border-color:var(--red);
+  background:#0e0e0f;
+}
+
+.contact-card small{
+  color:#707074;
+  display:block;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  font-size:9px;
+  margin-bottom:8px;
+}
+
+.contact-card strong{font-size:17px}
+
+.arrow{
+  color:var(--red);
+  font-size:24px;
+}
+
+/* DISCLAIMER */
+
+.disclaimer{
+  padding:27px 20px;
+  text-align:center;
+  background:#040404;
+  border-top:1px solid var(--line);
+  color:#777;
+  font-size:11px;
+  line-height:1.8;
+}
+
+.disclaimer strong{
+  color:#d6d6d6;
+  letter-spacing:1px;
+}
+
+/* FOOTER */
+
+footer{
+  border-top:1px solid var(--line);
+  padding:35px 0;
+}
+
+.footer{
+  width:min(var(--max),calc(100% - 44px));
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  color:#69696c;
+  font-size:10px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+
+.footer-logo{
+  color:white;
+  font-family:Oswald,sans-serif;
+  font-size:17px;
+  font-weight:700;
+}
+
+.footer-logo span{color:var(--red)}
+
+.mobile-bar{display:none}
+
+/* REVEAL */
+
+.reveal{
+  opacity:0;
+  transform:translateY(32px);
+  transition:.75s ease;
+}
+
+.reveal.visible{
+  opacity:1;
+  transform:none;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+  .nav-links a:not(.nav-cta){display:none}
+
+  .section-head,
+  .intro-grid,
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
+
+  .services-grid{grid-template-columns:1fr}
+
+  .experience-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .exp:nth-child(2){border-right:0}
+  .exp{border-bottom:1px solid var(--line)}
+
+  .hero-bottom,
+  .red-inner{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .gallery-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .gallery-item:first-child{
+    grid-column:span 2;
+  }
+
+  .gallery-item:nth-child(4){
+    grid-column:auto;
+  }
+}
+
+@media(max-width:600px){
+  body{padding-bottom:66px}
+
+  nav{height:68px}
+
+  .container,
+  .nav-inner,
+  .hero-content{
+    width:calc(100% - 28px);
+  }
+
+  .hero h1{
+    font-size:clamp(68px,21vw,100px);
+    letter-spacing:-4px;
+  }
+
+  .hero-content{padding-bottom:55px}
+
+  section{padding:82px 0}
+
+  .actions,.actions .btn{width:100%}
+
+  .image-box{min-height:430px}
+
+  .gallery-grid{
+    grid-template-columns:1fr;
+    grid-auto-rows:290px;
+  }
+
+  .gallery-item:first-child,
+  .gallery-item:nth-child(4){
+    grid-column:auto;
+    grid-row:auto;
+  }
+
+  .experience-grid{grid-template-columns:1fr}
+
+  .exp{border-right:0}
+
+  .footer{
+    flex-direction:column;
+    gap:12px;
+  }
+
+  .mobile-bar{
+    position:fixed;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    bottom:0;left:0;right:0;
+    height:66px;
+    z-index:1200;
+    background:#050505;
+    border-top:1px solid var(--line);
+  }
+
+  .mobile-bar a{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-transform:uppercase;
+    font-size:12px;
+    font-weight:700;
+  }
+
+  .mobile-bar a:first-child{
+    background:var(--red);
+    color:#fff;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="nav-inner">
+
+    <a href="#home" class="logo">
+      ONUK<span>.</span>
+    </a>
+
+    <div class="nav-links">
+      <a href="#about">Hakkında</a>
+      <a href="#services">Hizmetler</a>
+      <a href="#works">Çalışmalar</a>
+      <a href="#contact">İletişim</a>
+
+      <a href="tel:+905374123971" class="nav-cta">
+        Bize Ulaşın
+      </a>
+    </div>
+
+  </div>
+</nav>
+
+<header class="hero" id="home">
+
+  <div class="hero-bg"></div>
+
+  <div class="hero-content">
+
+    <div class="eyebrow">
+      Gemlik · Bursa
+    </div>
+
+    <h1>
+      BUILT<br>
+      FOR <span>DETAIL.</span>
+    </h1>
+
+    <div class="hero-bottom">
+
+      <p class="hero-text">
+        ONUK Oto Detailing için hazırlanan premium dijital vitrin.
+        Yapılan araç çalışmalarının güçlü görsellerle sunulabileceği,
+        müşterilerin hizmetleri inceleyip işletmeye kolayca ulaşabileceği
+        modern bir web deneyimi.
+      </p>
+
+      <div class="actions">
+        <a href="#works" class="btn btn-red">
+          Çalışmaları Gör →
+        </a>
+
+        <a href="#contact" class="btn btn-dark">
+          İletişim
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</header>
+
+<div class="marquee">
+  <div class="marquee-track">
+
+    <span><b>ONUK</b> · DETAILING · GEMLİK · PRECISION · AUTOMOTIVE ·</span>
+    <span><b>ONUK</b> · DETAILING · GEMLİK · PRECISION · AUTOMOTIVE ·</span>
+    <span><b>ONUK</b> · DETAILING · GEMLİK · PRECISION · AUTOMOTIVE ·</span>
+    <span><b>ONUK</b> · DETAILING · GEMLİK · PRECISION · AUTOMOTIVE ·</span>
+
+  </div>
+</div>
+
+<section class="intro" id="about">
+<div class="container">
+
+  <div class="section-head reveal">
+
+    <div class="index">
+      01 / ONUK
+    </div>
+
+    <div>
+      <h2>
+        DETAY<br>
+        BİR TERCİH DEĞİL.
+      </h2>
+
+      <p class="section-copy">
+        Otomobil bakımında sonucu belirleyen küçük ayrıntılardır.
+        Bu konsept, ONUK'un yaptığı çalışmaların güçlü ve modern
+        bir dijital kimlikle sunulabilmesi için tasarlandı.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="intro-grid reveal">
+
+    <div class="image-box">
+      <img
+        src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1600&q=88"
+        alt="Temsili otomobil görseli">
+
+      <div class="image-label">
+        Precision / Automotive
+      </div>
+    </div>
+
+    <div class="image-box">
+      <img
+        src="https://images.unsplash.com/photo-1504215680853-026ed2a45def?auto=format&fit=crop&w=1000&q=88"
+        alt="Temsili otomobil görseli">
+
+      <div class="image-label">
+        Detail / Finish
+      </div>
+    </div>
+
+  </div>
+
+</div>
+</section>
+
+<section class="services" id="services">
+<div class="container">
+
+  <div class="section-head reveal">
+
+    <div class="index">
+      02 / Hizmet Alanları
+    </div>
+
+    <div>
+      <h2>
+        ARACINIZA<br>
+        ÖZEL DENEYİM.
+      </h2>
+
+      <p class="section-copy">
+        Aşağıdaki alanlar tasarım önizlemesi için oluşturulmuştur.
+        Nihai web sitesinde ONUK tarafından doğrulanan gerçek hizmetler,
+        paketler ve uygulama detayları burada sunulabilir.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="services-grid reveal">
+
+    <article class="service">
+      <div class="service-top">
+        <span>01</span>
+        <span>Exterior</span>
+      </div>
+
+      <div>
+        <h3>Dış Detay</h3>
+        <p>
+          Araç dış yüzeyinde gerçekleştirilen güncel uygulamaların,
+          süreçlerin ve sonuçların sergilenebileceği alan.
+        </p>
+      </div>
+    </article>
+
+    <article class="service">
+      <div class="service-top">
+        <span>02</span>
+        <span>Interior</span>
+      </div>
+
+      <div>
+        <h3>İç Detay</h3>
+        <p>
+          İşletmenin doğruladığı iç mekân uygulamalarının
+          profesyonel fotoğraflar ve açıklamalarla sunulabileceği bölüm.
+        </p>
+      </div>
+    </article>
+
+    <article class="service">
+      <div class="service-top">
+        <span>03</span>
+        <span>Protection</span>
+      </div>
+
+      <div>
+        <h3>Koruma</h3>
+        <p>
+          ONUK'un sunduğu doğrulanmış koruma ve bakım seçeneklerinin
+          müşteriye ayrıntılı biçimde anlatılabileceği alan.
+        </p>
+      </div>
+    </article>
+
+    <article class="service">
+      <div class="service-top">
+        <span>04</span>
+        <span>Custom</span>
+      </div>
+
+      <div>
+        <h3>Özel Uygulamalar</h3>
+        <p>
+          İşletmeye özgü güncel uygulamalar, paketler ve çalışmalar
+          için tamamen özelleştirilebilir bölüm.
+        </p>
+      </div>
+    </article>
+
+  </div>
+
+</div>
+</section>
+
+<section class="cinema">
+
+<div class="container">
+
+  <div class="cinema-content reveal">
+
+    <div class="eyebrow">
+      The Detailing Experience
+    </div>
+
+    <h2>
+      ÖNCE GÖR.<br>
+      SONRA HİSSET.
+    </h2>
+
+    <p>
+      ONUK'un kendi araç ve uygulama fotoğrafları eklendiğinde
+      bu alan müşterilerin yapılan işleri büyük ve etkileyici
+      görseller üzerinden inceleyebileceği dijital bir showrooma dönüşebilir.
+    </p>
+
+    <a href="#works" class="btn btn-red">
+      Galeriyi İncele →
+    </a>
+
+  </div>
+
+</div>
+</section>
+
+<section class="gallery" id="works">
+<div class="container">
+
+  <div class="section-head reveal">
+
+    <div class="index">
+      03 / Çalışmalar
+    </div>
+
+    <div>
+      <h2>
+        SONUÇ<br>
+        KENDİNİ GÖSTERİR.
+      </h2>
+
+      <p class="section-copy">
+        Şimdilik temsilî otomotiv görselleri kullanılmaktadır.
+        Proje tamamlandığında bu galeri ONUK'un izin verilen gerçek
+        araç ve uygulama fotoğraflarıyla değiştirilebilir.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="gallery-grid reveal">
+
+    <div class="gallery-item">
+      <img
+        src="https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1400&q=88"
+        alt="Temsili otomobil">
+    </div>
+
+    <div class="gallery-item">
+      <img
+        src="https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=900&q=88"
+        alt="Temsili otomobil">
+    </div>
+
+    <div class="gallery-item">
+      <img
+        src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=900&q=88"
+        alt="Temsili otomobil">
+    </div>
+
+    <div class="gallery-item">
+      <img
+        src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1300&q=88"
+        alt="Temsili otomobil">
+    </div>
+
+  </div>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+  <div class="section-head reveal">
+
+    <div class="index">
+      04 / Dijital Deneyim
+    </div>
+
+    <div>
+      <h2>
+        TEK NOKTADA<br>
+        DAHA GÜÇLÜ.
+      </h2>
+    </div>
+
+  </div>
+
+  <div class="experience-grid reveal">
+
+    <div class="exp">
+      <div class="exp-number">01</div>
+
+      <div>
+        <h3>Keşfet</h3>
+        <p>
+          Müşteri işletmeyi profesyonel bir web deneyimi üzerinden tanır.
+        </p>
+      </div>
+    </div>
+
+    <div class="exp">
+      <div class="exp-number">02</div>
+
+      <div>
+        <h3>İncele</h3>
+        <p>
+          Gerçek hizmetler ve yapılan çalışmalar düzenli biçimde sunulabilir.
+        </p>
+      </div>
+    </div>
+
+    <div class="exp">
+      <div class="exp-number">03</div>
+
+      <div>
+        <h3>Karar Ver</h3>
+        <p>
+          Araç görselleri ve uygulama detayları müşterinin kararını destekler.
+        </p>
+      </div>
+    </div>
+
+    <div class="exp">
+      <div class="exp-number">04</div>
+
+      <div>
+        <h3>Ulaş</h3>
+        <p>
+          Telefon ve harita bağlantılarıyla işletmeye hızlı erişim sağlanır.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+</section>
+
+<section class="red-section">
+
+<div class="container">
+
+  <div class="red-inner reveal">
+
+    <h2>
+      EVERY DETAIL<br>
+      HAS A PURPOSE.
+    </h2>
+
+    <a href="tel:+905374123971" class="btn black-btn">
+      Telefonla Ulaş →
+    </a>
+
+  </div>
+
+</div>
+</section>
+
+<section class="contact" id="contact">
+
+<div class="container">
+
+  <div class="contact-grid">
+
+    <div class="contact-text reveal">
+
+      <div class="index">
+        05 / İletişim
+      </div>
+
+      <h2>
+        ONUK<br>
+        DETAILING.
+      </h2>
+
+      <p>
+        ONUK Oto Detailing için hazırlanmış bağımsız web tasarım konsepti.
+        İşletmeyle birlikte ilerlenmesi hâlinde güncel hizmetler,
+        gerçek işletme ve araç fotoğrafları ile marka bilgileri
+        kullanılarak nihai sürüme dönüştürülebilir.
+      </p>
+
+    </div>
+
+    <div class="contact-cards reveal">
+
+      <a href="tel:+905374123971" class="contact-card">
+        <div>
+          <small>Telefon</small>
+          <strong>0537 412 39 71</strong>
+        </div>
+        <div class="arrow">↗</div>
+      </a>
+
+      <div class="contact-card">
+        <div>
+          <small>Bölge</small>
+          <strong>Gemlik · Bursa</strong>
+        </div>
+        <div class="arrow">•</div>
+      </div>
+
+      <a
+        href="https://www.google.com/maps/search/?api=1&query=ONUK+Oto+Detailing+Gemlik+Bursa"
+        target="_blank"
+        rel="noopener"
+        class="contact-card">
+
+        <div>
+          <small>Harita</small>
+          <strong>Yol Tarifi Al</strong>
+        </div>
+
+        <div class="arrow">↗</div>
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
+</section>
+
+<div class="disclaimer">
+  <strong>WEB SİTESİ TASARIM ÖNİZLEMESİ</strong><br>
+  Bu çalışma ONUK Oto Detailing için hazırlanmış bağımsız bir tasarım konseptidir
+  ve işletmenin resmî web sitesi değildir. Kullanılan otomotiv görselleri temsilîdir.
+  Nihai hizmetler, fotoğraflar ve işletme bilgileri işletme onayıyla güncellenebilir.
+</div>
+
+<footer>
+
+  <div class="footer">
+
+    <div class="footer-logo">
+      ONUK<span>.</span>
+    </div>
+
+    <div>GEMLİK · BURSA</div>
+
+    <div>DESIGN PREVIEW</div>
+
+  </div>
+
+</footer>
+
+<div class="mobile-bar">
+
+  <a href="tel:+905374123971">
+    Ara
+  </a>
+
+  <a
+    href="https://www.google.com/maps/search/?api=1&query=ONUK+Oto+Detailing+Gemlik+Bursa"
+    target="_blank"
+    rel="noopener">
+    Konum
+  </a>
+
+</div>
+
+<script>
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach((entry)=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("visible");
+    }
+  });
+},{
+  threshold:.12
+});
+
+document.querySelectorAll(".reveal").forEach((el)=>{
+  observer.observe(el);
+});
+
+const heroBg = document.querySelector(".hero-bg");
+
+window.addEventListener("scroll",()=>{
+  if(window.innerWidth > 768){
+    heroBg.style.transform =
+      `scale(1.04) translateY(${window.scrollY * .06}px)`;
+  }
+});
+</script>
+
+</body>
+</html>
